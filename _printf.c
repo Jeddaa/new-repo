@@ -13,7 +13,7 @@
 int _printf(const char * const format, ...)
 {
     va_list args;
-    int g = 0, h = 0;
+    int g = 0, h, no;
     char *sdis = '\0';
     int tot_dis = 0;
     va_start(args, format);
@@ -29,30 +29,32 @@ int _printf(const char * const format, ...)
         {
             if (format[g + 1] == 'c')
             {
-                _putchar(va_arg(args, int));
+                _print_xter(va_arg(args, int));
                 tot_dis++;
                 g++;
             }
             else if (format[g + 1] == 's')
             {
                 g++;
-                sdis = va_arg(args, char*);
-                while (sdis[h] != '\0')
-                {
-                    _putchar(sdis[h]);
-                    h++;
-                    tot_dis++;
-                }
+                _print_strng(args);
+                tot_dis++;
             }
             else if (format [g + 1] == '%')
             {
                 _putchar('%');
                 tot_dis++;
             }
-        }
+            else if (format [g + 1] == 'd')
+            {
+                g++;
+                _print_num(va_arg(args, int));
+                tot_dis++;
+                }
+            }
+        
         g++;
-
     }
+    
     va_end(args);
 
     return (tot_dis);
