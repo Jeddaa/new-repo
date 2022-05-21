@@ -13,8 +13,11 @@
 int _printf(const char * const format, ...)
 {
     va_list args;
-    int g = 0, h, no;
-    char *sdis = '\0';
+    int g = 0;
+    /**int h, no;
+    *char = \0;
+
+    */
     int tot_dis = 0;
     va_start(args, format);
 

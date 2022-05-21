@@ -14,13 +14,11 @@ int _print_num(int num)
    
     _putchar(num % 10 + '0');
     
-// while (num > 0)
-// {
-//     _putchar ('0' + (num % 10));
-//     num /= 10;
-// }
-
-
+/** while (num > 0)
+*{
+*     _putchar ('0' + (num % 10));
+*     num /= 10;
+*/
 
     return (0);
 }
