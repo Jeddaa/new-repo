@@ -13,15 +13,17 @@ int main(void)
 {
     /* %c %s %% */
 
-    // _printf("Name: %s, Genotype: %c%c\n", "Fatihah", 'A', 'A');
+    // _printf("Name: %s, Genotype: %c\n", "Fatihah", 'A', 'A');
     // printf("Name: %s, Genotype: %c%c\n", "Fatihah", 'A', 'A');
 
-    int n = 0;
-    n = _printf("%%\n");
+    // int n = 0;
 
-    printf("n: %d\n", n);
+    // _printf("Name: %s\nAge: %d years old\nGenotype: %c %c\n", "Fati", 2050, 'A', 'A');
 
-    n = printf("%%\n");
-    printf("n: %d\n", n);
+    _printf("number: %d\n", 2050);
+    _printf("name: %s\n", "fati");
+    _printf("%%\n");
+    _printf("grade: %c\n", 'A');
+    printf("number: %d\n", 2050);
     return 0;
 }
