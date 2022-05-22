@@ -20,10 +20,11 @@ int main(void)
 
     // _printf("Name: %s\nAge: %d years old\nGenotype: %c %c\n", "Fati", 2050, 'A', 'A');
 
+    //  _printf("%%\n");
     _printf("number: %d\n", 2050);
     _printf("name: %s\n", "fati");
     _printf("%%\n");
     _printf("grade: %c\n", 'A');
-    printf("number: %d\n", 2050);
+    // printf("number: %d\n", 2050);
     return 0;
 }

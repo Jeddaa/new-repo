@@ -1,24 +1,30 @@
 #include "main.h"
 #include <stdarg.h>
 
-int _print_num(int num)
+/**
+ * _print_num - prints an integer
+ * @div: divisor
+ * @num: number to be printed
+ * @arg: argument 
+ * Return: 1 if succesful, -1 on error 
+ */
+
+int _print_num(va_list arg)
 {
-   if (num < 0)
+    unsigned int div = 1, i, quot, print_char = 0;
+    int num = va_arg(arg, int);
+    if (num < 0)
     {
         _putchar('-');
-        num = -num;
+        print_char++;
+        num *= -1;
     }
-     if (num/10)
-       _print_num( num / 10);
- 
-   
-    _putchar(num % 10 + '0');
-    
-/** while (num > 0)
-*{
-*     _putchar ('0' + (num % 10));
-*     num /= 10;
-*/
-
-    return (0);
+    for (i = 0; num / div > 9; i++, div *= 10)
+    ;
+    for (; div >= 1; num % div, div /= 10, print_char++)
+    {
+        quot = num / div;
+        _putchar('0' + quot);
+    }
+    return (print_char);
 }
